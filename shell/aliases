@@ -1,0 +1,46 @@
+###############
+### Aliases ###
+###############
+
+# Typographic errors
+alias sl="ls"
+alias LS="ls"
+alias vi="vim"
+alias search="aptitude search"
+alias up="sudo aptitude update && sudo aptitude safe-upgrade"
+alias install="sudo aptitude install"
+alias search="aptitude search"
+alias remove="sudo aptitude purge"
+
+# Fixed params
+alias ls="ls -h --color=auto"
+alias grep="grep --color=auto"
+alias ssh="ssh -X"
+
+# New commands
+alias ll="ls -l"
+alias la="ls -al"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias psf="ps fux | grep -v grep | grep -v ps"
+
+alias profile="valgrind --tool=callgrind "
+
+alias ack='ack-grep'
+alias make='make -j4'
+alias suitup='sudo'
+alias cdkiwi='cd ~/Dev/kiwi/'
+alias gitcommit='git commit -a -m'
+alias linecount='sloccount . | grep Physical'
+alias open='gnome-open'
+alias vjk='ssh -T -l vjksilva fw2.k-net.dk'
+alias paulcx='ssh blog@paul.cx "tmux -u attach"' 
+
+alias compresspdf='gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=compressed_out.pdf'
+alias valgrindprofile='valgrind --tool=callgrind'
+
+alias android-connect='mtpfs -o allow_other /media/GalaxyNexus'
+alias android-disconnect='fusermount -u /media/GalaxyNexus'
