@@ -29,6 +29,7 @@ alias psf="ps fux | grep -v grep | grep -v ps"
 
 alias profile="valgrind --tool=callgrind "
 
+alias sublime='~/bin/SublimeText/sublime_text'
 alias ack='ack-grep'
 alias make='make -j4'
 alias suitup='sudo'

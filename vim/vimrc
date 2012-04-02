@@ -1,0 +1,112 @@
+
+" Enable syntax highlighting
+syntax on
+" Color scheme.
+set background=dark
+if has("gui_running")
+  colorscheme slate
+else
+  color aureal
+endif
+" Highlight matched pattern when searching or replacing.
+set hlsearch
+" Show the line numbers.
+set number
+" Wrap words, and break then between words only.
+set linebreak
+" Match pairs of symbols
+set matchpairs+=<:>":"`:`
+" Size of tabulatons, which are in fact spaces
+set expandtab
+set tabstop=4
+set shiftwidth=4
+" Case sensitive seach if a capital is used in the search pattern
+set ignorecase
+set smartcase
+" remove the useless buttons from gvim
+set guioptions=nomenu
+" Remove menubar
+set guioptions-=m
+" Add vim icon and use console instead of popups
+set guioptions+=ic
+" Remove bottom scrolling bar.
+set guioptions-=b
+" Allow backspace in insert mode like in any other text editor
+set backspace=indent,eol,start 
+" Set the dictionnary to french
+set dictionary+="/usr/share/dict/french"
+" Set the Doxygen style comments, to ease the writing of documentation
+set comments=s1:/**,mb:*,ex:*/
+" We will almost never open .o in vim, so remove them from matching
+set wildignore+=*.o,*.obj,.git,*.swp,*.svn,*.pyc
+" Add · for trailing spaces.
+set list listchars=tab:\ \ ,trail:·
+set lazyredraw
+" Don't go to the start of line when using C-D and such
+set nostartofline
+set modeline
+set scroll=5
+set scrolloff=5
+set sidescrolloff=5
+set sidescroll=1
+set viminfo='10,:20,\"100,%,n~/.viminfo
+set history=1000
+set nobackup
+set nowritebackup
+set noswapfile
+
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+" Use TAB in normal mode to fold/unfold
+set foldmethod=indent
+map <Tab> za
+au BufReadPost * normal zR
+" SCons support
+set makeprg=scons\ -u\ \.
+" Ack is "better than grep"
+set grepprg=ack-grep
+
+" word wrap
+set ww=h,l
+if has("gui_running")
+  " If the current buffer has never been saved, it will have no name,
+  " call the file browser to save it, otherwise just save it.
+  :map <silent> <C-S> :if expand("%") == ""<CR>:browse confirm w<CR>:else<CR>:confirm w<CR>:endif<CR>
+endif
+:imap <c-s> <c-o><c-s>
+:map <C-d> yyp
+:imap <C-d> <Esc>yypi
+
+:imap <C-z> <Esc>ui
+:imap <C-y> <Esc>Ui
+:imap <C-space> <c-n>
+
+"freakin past function not even here by default
+:nnoremap <S-Insert> "+P
+
+let delimitMate_matchpairs = "(:),[:],{:}"
+au FileType html let b:delimitMate_matchpairs = "(:),[:],{:},<:>"
+
+" Press F4 to clear highlighting.
+map <F4> :noh<CR>
+
+" Control tab switches between cpp an .h file, as in Eclipse
+map <C-Tab> :FSHere<CR><Esc>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+
+let mapleader = ","
+
+" Useful status information at bottom of screen
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+
+" Textmate command-t (fuzzy find file).
+map <Leader>t :silent :FufCoverageFile <CR><Esc>
+" map <Leader>t ;CommandT<CR>
+map <Leader>b ;CommandTBuffer<CR>
+map <Leader>r ;CommandTFlush <CR>
+let g:CommandTCancelMap=['<ESC>','<C-c>']
+let g:CommandTAcceptSelectionMap=['<CR>']
