@@ -1,3 +1,10 @@
+set nocompatible
+set nocp
+filetype off  
+call pathogen#infect()
+" call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+filetype on 
 
 " Enable syntax highlighting
 syntax on
@@ -54,9 +61,6 @@ set history=1000
 set nobackup
 set nowritebackup
 set noswapfile
-
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
 
 " Use TAB in normal mode to fold/unfold
 set foldmethod=indent

@@ -1,0 +1,8 @@
+[extensions]
+mq =
+
+[diff]
+git = 1
+
+[ui]
+username = Nicolas Silva <nsilva@mozilla.com>

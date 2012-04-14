@@ -17,6 +17,9 @@ alias ls="ls -h --color=auto"
 alias grep="grep --color=auto"
 alias ssh="ssh -X"
 
+# vim
+alias gv="gvim --remote"
+
 # New commands
 alias ll="ls -l"
 alias la="ls -al"
@@ -45,3 +48,10 @@ alias valgrindprofile='valgrind --tool=callgrind'
 
 alias android-connect='mtpfs -o allow_other /media/GalaxyNexus'
 alias android-disconnect='fusermount -u /media/GalaxyNexus'
+
+alias cpphighlight="pygmentize -l c++"
+
+alias firefox="firefox-stable"
+
+alias mozdiff="hg dif -p -U 8"
+alias mozpatch="hg dif -p -U 8 -N"

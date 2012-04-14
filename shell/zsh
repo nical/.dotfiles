@@ -10,7 +10,7 @@ CASE_SENSITIVE="true"
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-#ZSH_THEME="darkblood"
+# ZSH_THEME="darkblood"
 
 
 
@@ -34,3 +34,29 @@ CASE_SENSITIVE="true"
 
 # Customize to your needs...
 #export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+
+HISTFILE=~/.zsh_history
+SAVEHIST=10000
+HISTSIZE=10000
+setopt hist_ignore_dups
+
+autoload compinit
+compinit
+
+autoload -U colors
+colors
+
+setopt prompt_subst
+#vcprompt --format "%s:%b (%m)"
+PROMPT='
+┌[%m:%n%{$reset_color%}](%{$fg_bold[white]%}%~%{$reset_color%}) %{$fg_bold[green]%}$(vcprompt)%{$reset_color%} 
+└→ %{$reset_color%}'
+
+REPORTTIME=10 # Show elapsed time if command took more than X seconds
+LISTMAX=0 # ask to complete if top of list would scroll off screen
+
+bindkey ";5C" forward-word
+bindkey ";5D" backward-word
+
+#autocompletion
+source ~/.dotfiles/shell/completion.zsh
