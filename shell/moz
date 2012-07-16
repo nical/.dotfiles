@@ -1,0 +1,6 @@
+
+# android ndk
+PATH=$PATH:/home/nico/dev/mozilla/android-ndk/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/arm-linux-androideabi/bin/
+
+# android sdk
+PATH=$PATH:/home/nico/dev/mozilla/android-sdk/platform-tools/
