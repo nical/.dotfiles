@@ -27,16 +27,17 @@ autoload -U colors
 colors
 
 setopt prompt_subst
-#vcprompt --format "%s:%b (%m)"
 PROMPT='
 ┌[%m:%n%{$reset_color%}](%{$fg_bold[white]%}%~%{$reset_color%}) %{$fg_bold[green]%}$(vcprompt)%{$reset_color%} 
 └→ %{$reset_color%}'
 
-REPORTTIME=10 # Show elapsed time if command took more than X seconds
+#REPORTTIME=10 # Show elapsed time if command took more than X seconds
 LISTMAX=0 # ask to complete if top of list would scroll off screen
 
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward
 
 #autocompletion
 source ~/.dotfiles/shell/completion.zsh

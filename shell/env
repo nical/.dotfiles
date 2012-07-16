@@ -1,1 +1,18 @@
 export PATH=$HOME/bin:$PATH
+
+export DLIBS=$HOME/dev/d/libs
+
+export DERELICT2_IMPORT=$DLIBS/Derelict2/import
+export DERELICT2_LIB=$DLIBS/Derelict2/lib
+
+export DERELICT3_IMPORT=$DLIBS/Derelict3/import
+export DERELICT3_LIB=$DLIBS/Derelict3/lib
+
+export GL3N_IMPORT=$DLIBS/gl3n/import
+export GL3N_LIB=$DLIBS/gl3n/lib
+
+export ORANGE_IMPORT=$DLIBS/orange/import
+export ORANGE_LIB=$DLIBS/orange/lib/64
+
+export CERES_IMPORT=$HOME/dev/d/ceres/import
+export CERES_LIB=$HOME/dev/d/ceres/lib

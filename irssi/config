@@ -237,16 +237,16 @@ logs = {
 keyboard = ( { key = "meta-`"; id = "command"; data = "window last"; } );
 hilights = ( { text = "nical"; nick = "yes"; word = "yes"; } );
 ignores = (
-{
-  level = "JOINS PARTS QUITS";
-  channels = ( "#gfx", "#developers", "#games", "#media" );
-  network  = "moznet";
-},
-{
-  level = "MODES";
-  channels = ( "&amp;bitlbee" );
-  network  = "BitlBee";
-}
+  {
+    level = "JOINS PARTS QUITS";
+    channels = ( "#gfx", "#developers", "#games", "#media" );
+    network = "moznet";
+  },
+  { 
+    level = "MODES";
+    channels = ( "&amp;bitlbee" );
+    network = "BitlBee";
+  }
 );
 windows = {
   1 = {

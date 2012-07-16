@@ -33,25 +33,29 @@ alias psf="ps fux | grep -v grep | grep -v ps"
 alias profile="valgrind --tool=callgrind "
 
 alias sublime='~/bin/SublimeText/sublime_text'
-alias ack='ack-grep'
+#alias ack='ack-grep'
 alias make='make -j4'
 alias suitup='sudo'
 alias cdkiwi='cd ~/Dev/kiwi/'
 alias gitcommit='git commit -a -m'
 alias linecount='sloccount . | grep Physical'
 alias open='gnome-open'
-alias vjk='ssh -T -l vjksilva fw2.k-net.dk'
-alias paulcx='ssh blog@paul.cx "tmux -u attach"' 
+alias ccat='pygmentize'
 
 alias compresspdf='gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=compressed_out.pdf'
 alias valgrindprofile='valgrind --tool=callgrind'
 
 alias android-connect='mtpfs -o allow_other /media/GalaxyNexus'
 alias android-disconnect='fusermount -u /media/GalaxyNexus'
+alias paulcx="mosh nical@50.116.3.75"
 
 alias cpphighlight="pygmentize -l c++"
 
 alias firefox="firefox-stable"
 
-alias mozdiff="hg dif -p -U 8"
-alias mozpatch="hg dif -p -U 8 -N"
+alias mozpatch="hg export qtip"
+alias moztry='hg qnew -m "try: -b do -p all -u all -t none"'
+alias qseries='hg qseries -v'
+alias hgdiff='hg export qtip | pygmentize -l diff'
+alias hgexport='hg export qtip'
+alias mq='patchqueue'

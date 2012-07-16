@@ -1,8 +1,28 @@
 [extensions]
-mq =
+hgext.mq =
+crecord = ~/.dotfiles/hg/crecord
+color = 
+pager = 
+
+[default]
+diff=-U 8 -p
+qdiff=-U 8 -p
+qnew=-U
 
 [diff]
-git = 1
+git=true
+showfunc=true
+unified=8
 
 [ui]
 username = Nicolas Silva <nsilva@mozilla.com>
+
+[paths]
+try = ssh://hg.mozilla.org/try
+
+[pager]
+pager = LESS='FSRX' less
+attend = annotate, cat, diff, export, glog, log, qdiff
+
+[hooks]
+post-push = hg phase --force --draft "mq()"

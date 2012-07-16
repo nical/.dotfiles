@@ -1,7 +1,7 @@
 set nocompatible
 set nocp
 filetype off  
-call pathogen#infect()
+call pathogen#infect('~/.dotfiles/vim/bundle')
 " call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 filetype on 
@@ -107,10 +107,12 @@ let mapleader = ","
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-" Textmate command-t (fuzzy find file).
-map <Leader>t :silent :FufCoverageFile <CR><Esc>
+" Textmate command-t (fuzzy find file). not working
+" map <Leader>t :silent :FufCoverageFile <CR><Esc>
 " map <Leader>t ;CommandT<CR>
 map <Leader>b ;CommandTBuffer<CR>
 map <Leader>r ;CommandTFlush <CR>
 let g:CommandTCancelMap=['<ESC>','<C-c>']
 let g:CommandTAcceptSelectionMap=['<CR>']
+
+nnoremap ; :
